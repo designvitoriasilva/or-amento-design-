@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento de Serviços de Design</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0A0A23;
+      color: #FFFFFF;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #FFFFFF;
+    }
+    .section {
+      background-color: #E9DDCF;
+      color: #0A0A23;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+    }
+    .total {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #E9DDCF;
+    }
+    button {
+      background-color: #E9DDCF;
+      color: #0A0A23;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .actions {
+      margin-top: 20px;
+    }
+    a {
+      color: #E9DDCF;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Monte seu Orçamento</h1>
+
+  <form id="form">
+    <label for="cliente">Nome do Cliente/Empresa:</label>
+    <input type="text" id="cliente" name="cliente" placeholder="Ex: Vitória Design">
+
+    <div class="section">
+      <h2>Identidade Visual</h2>
+      <label><input type="checkbox" value="70"> Logo (R$70 a R$150)</label>
+      <label><input type="checkbox" value="400"> Identidade Visual completa (R$400)</label>
+      <label><input type="checkbox" value="50"> Cartão de visita (R$50)</label>
+      <label><input type="checkbox" value="80"> Banner para Site (R$80)</label>
+      <label><input type="checkbox" value="80"> Cartaz Publicitário (R$80)</label>
+      <label><input type="checkbox" value="50"> Convite digital simples (R$50)</label>
+      <label><input type="checkbox" value="70"> Convite digital com IA (R$70)</label>
+      <label><input type="checkbox" value="100"> Convite digital animado com IA (R$100)</label>
+      <label><input type="checkbox" value="150"> Quadros (R$150)</label>
+    </div>
+
+    <div class="section">
+      <h2>Social Media</h2>
+      <label><input type="checkbox" value="500"> Estruturação de perfil (R$500)</label>
+      <label><input type="checkbox" value="70"> Link da bio (R$70)</label>
+      <label><input type="checkbox" value="50"> Post para Instagram (R$50)</label>
+      <label><input type="checkbox" value="150"> Carrossel para Instagram (R$150)</label>
+      <label><input type="checkbox" value="50"> Templates para stories (R$50)</label>
+      <label><input type="checkbox" value="50"> Capa para Facebook (R$50)</label>
+      <label><input type="checkbox" value="60"> Thumbnail para YouTube (R$60)</label>
+      <label><input type="checkbox" value="10"> Stories interativos personalizados (R$10)</label>
+      <label><input type="checkbox" value="40"> Destaques personalizados (kit com 5) (R$40)</label>
+      <label><input type="checkbox" value="15"> Capa para Reels (R$15)</label>
+      <label><input type="checkbox" value="60"> Mini calendários de conteúdo (R$60)</label>
+      <label><input type="checkbox" value="150"> Identidade visual para canal (R$150)</label>
+    </div>
+
+    <div class="section">
+      <h2>Planos de Artes</h2>
+      <label><input type="checkbox" value="250"> Plano Básico (R$250) - 8 artes/mês, 1 revisão por arte</label>
+      <label><input type="checkbox" value="450"> Plano Padrão (R$450) - 16 artes/mês, stories de apoio, 2 revisões, suporte de ideias</label>
+      <label><input type="checkbox" value="750"> Plano Profissional (R$750) - 20 artes/mês, stories interativos, vídeos, calendário e 5 revisões</label>
+      <label><input type="checkbox" value="50"> Pacote Express (R$50) - 3 artes, 1 revisão, entrega em 2 dias úteis</label>
+      <label><input type="checkbox" value="100"> Pacote Essencial (R$100) - 6 artes, 1 revisão, entrega em 4 dias úteis</label>
+      <label><input type="checkbox" value="150"> Pacote Intermediário (R$150) - 10 artes, 2 revisões, entrega em 7 dias úteis</label>
+      <label><input type="checkbox" value="250"> Pacote Criador (R$250) - 15 artes variadas, identidade visual, entrega em 10 dias úteis</label>
+    </div>
+
+    <div class="section">
+      <h2>Material Digital</h2>
+      <label><input type="checkbox" value="250"> Ebook (R$250)</label>
+      <label><input type="checkbox" value="300"> Catálogo de produtos (R$300)</label>
+      <label><input type="checkbox" value="80"> Flyer digital (R$80)</label>
+    </div>
+
+    <div class="section">
+      <h2>Vídeo e Animação</h2>
+      <label><input type="checkbox" value="30"> Reels/CapCut (R$30)</label>
+    </div>
+
+    <div class="section">
+      <h2>Ilustração</h2>
+      <label><input type="checkbox" value="80"> Ícones Personalizados (R$80)</label>
+      <label><input type="checkbox" value="120"> Padrão/Pattern (R$120)</label>
+      <label><input type="checkbox" value="250"> Pacotes de Stickers (R$250)</label>
+      <label><input type="checkbox" value="50"> Criação de Imagens com IA (R$50)</label>
+    </div>
+
+    <button type="button" onclick="calcularTotal()">Calcular Orçamento</button>
+    <div class="total" id="total"></div>
+
+    <div class="actions" id="acoes" style="display:none;">
+      <p>Compartilhar orçamento para:</p>
+      <a href="#" id="emailLink" target="_blank">📧 E-mail</a>
+      <a href="#" id="whatsLink" target="_blank">💬 WhatsApp</a>
+    </div>
+  </form>
+
+  <script>
+    function calcularTotal() {
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const nome = document.getElementById('cliente').value.trim();
+      let total = 0;
+      let servicos = [];
+
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          total += parseFloat(cb.value);
+          servicos.push(cb.parentElement.textContent.trim());
+        }
+      });
+
+      document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
+
+      if (nome && servicos.length > 0) {
+        let mensagem = `Olá! Aqui está o orçamento para ${nome}:%0A%0A`;
+        mensagem += servicos.map(s => `- ${s}`).join('%0A');
+        mensagem += `%0A%0ATotal: R$ ${total.toFixed(2)}`;
+
+        document.getElementById('emailLink').href = `mailto:?subject=Orçamento%20para%20${nome}&body=${mensagem}`;
+        document.getElementById('whatsLink').href = `https://wa.me/?text=${mensagem}`;
+
+        document.getElementById('acoes').style.display = 'block';
+      } else {
+        document.getElementById('acoes').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
